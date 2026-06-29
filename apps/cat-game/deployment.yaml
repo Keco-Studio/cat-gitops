@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cat-game
+  namespace: cat-game
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cat-game
+  template:
+    metadata:
+      labels:
+        app: cat-game
+    spec:
+      containers:
+        - name: cat-game
+          image: ghcr.io/keco-studio/cat:latest
+          ports:
+            - containerPort: 80

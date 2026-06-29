@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cat-game
+  namespace: cat-game
+spec:
+  rules:
+    - host: cat.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: cat-game
+                port:
+                  number: 80

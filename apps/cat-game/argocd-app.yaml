@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cat-game
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Keco-Studio/cat-gitops
+    targetRevision: HEAD
+    path: apps/cat-game
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: cat-game
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
