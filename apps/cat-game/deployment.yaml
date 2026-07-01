@@ -13,6 +13,8 @@ spec:
       labels:
         app: cat-game
     spec:
+      imagePullSecrets:
+        - name: ghcr-secret
       containers:
         - name: cat-game
           image: ghcr.io/keco-studio/cat:dc2f1f88de031e7bc0b10d843fdb6065b9671240
