@@ -17,6 +17,6 @@ spec:
         - name: ghcr-secret
       containers:
         - name: cat-game
-          image: ghcr.io/keco-studio/cat:dc2f1f88de031e7bc0b10d843fdb6065b9671240
+          image: ghcr.io/keco-studio/cat:04c27c9ce39e55acc80ca27aba1db05b8a108e46
           ports:
             - containerPort: 80
